@@ -1,6 +1,5 @@
 -------------------------------------Query 2.0-----------------------------------------------------------
 SELECT p.age, COUNT(DISTINCT p.id) AS TOTAL
-INTO TEMP_TABLE
 FROM patient p JOIN check_up cu on p.id = cu.patient_id
     JOIN refferal r on cu.id = r.check_up_id
     JOIN medical_specialist ms on r.medical_specialist_id = ms.id
