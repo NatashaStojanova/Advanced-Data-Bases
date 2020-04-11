@@ -1,3 +1,4 @@
+-------------------------------------Query 3.0-----------------------------------------------------------
 SELECT bh.name,i.code,COUNT(*) AS TOTAL
 INTO TEMP_TABLE
 FROM base_hospital bh JOIN hospital h on bh.id = h.id_base_hospital
@@ -8,11 +9,13 @@ FROM base_hospital bh JOIN hospital h on bh.id = h.id_base_hospital
 WHERE cu.date >= '2019-01-01' AND cu.date <= '2019-12-31'
 GROUP BY bh.name,i.code;
 
-SELECT name,MAX(TOTAL) AS MAX_CODE
+-------------------------------------Query 3.1-----------------------------------------------------------
+ SELECT name,MAX(TOTAL) AS MAX_CODE
 INTO TEMP_TABLE_2
 FROM TEMP_TABLE
 GROUP BY name;
 
+-------------------------------------Query 3.2-----------------------------------------------------------
 SELECT T1.name,T1.code
 FROM TEMP_TABLE T1 , TEMP_TABLE_2 T2
 WHERE T1.name = T2.name AND T1.TOTAL = T2.MAX_CODE

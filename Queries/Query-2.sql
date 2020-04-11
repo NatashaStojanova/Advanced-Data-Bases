@@ -1,3 +1,4 @@
+-------------------------------------Query 2.0-----------------------------------------------------------
 SELECT p.age, COUNT(DISTINCT p.id) AS TOTAL
 INTO TEMP_TABLE
 FROM patient p JOIN check_up cu on p.id = cu.patient_id
@@ -7,6 +8,7 @@ FROM patient p JOIN check_up cu on p.id = cu.patient_id
 WHERE cu.date >= '2019-01-01' AND cu.date <= '2019-12-31' AND d.name = 'Cardiology'
 GROUP BY p.age;
 
+-------------------------------------Query 2.1-----------------------------------------------------------
 SELECT age
 FROM temp_table
 WHERE TOTAL = (SELECT MAX(TOTAL)
