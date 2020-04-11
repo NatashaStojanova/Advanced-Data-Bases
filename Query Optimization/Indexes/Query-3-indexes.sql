@@ -23,6 +23,5 @@ ON check_up_icd(id);
 --If you want to force the use of the index by "disabling" sequential scans--
 SET enable_seqscan = OFF;
 
--- Even though I created indexes, I didn't notice any difference in performance.
 
 
