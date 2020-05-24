@@ -1,4 +1,3 @@
---FIRST INSERT THE ID
 do
 $do$
 declare

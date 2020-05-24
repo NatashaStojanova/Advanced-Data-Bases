@@ -59,8 +59,8 @@ create table patient(
     constraint FK foreign key (id_doctor) references general_practitioner(id)
 );
 
-drop table if exists refferal cascade;
-create table refferal(
+drop table if exists referral cascade;
+create table referral(
     id int primary key not null,
     description varchar(255),
     medical_specialist_id int,
@@ -77,7 +77,7 @@ create table check_up(
     refferal_id int,
     doctor_id int,
     constraint FK1 foreign key (patient_id) references patient(id),
-    constraint FK2 foreign key (refferal_id) references refferal(id),
+    constraint FK2 foreign key (refferal_id) references referral(id),
     constraint FK3 foreign key (doctor_id) references doctor(id)
 );
 
@@ -97,11 +97,9 @@ create table check_up_icd(
     constraint FK2 foreign key (check_up_id) references check_up(id)
 );
 
-alter table refferal add constraint FK2 foreign key (check_up_id) references check_up(id);
+alter table referral add constraint FK2 foreign key (check_up_id) references check_up(id);
 
 drop sequence if exists main_sequence;
 create sequence main_sequence
     start 1
     increment 1;
-
-

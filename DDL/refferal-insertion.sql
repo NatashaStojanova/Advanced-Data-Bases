@@ -5,7 +5,7 @@ declare
 begin
 for  i in 1..10000
 loop
-    insert into refferal VALUES(nextval('main_sequence'),concat('RefferalDescription-',i),floor(random()*(10102-676+1))+676,floor(random()*(1076445-1066446+1))+1066446);
+    insert into referral VALUES(nextval('main_sequence'),concat('ReferralDescription-',i),floor(random()*(10000-676+1))+676,floor(random()*(1030101-1020102+1))+1020102);
 end loop;
 end
 $do$;
