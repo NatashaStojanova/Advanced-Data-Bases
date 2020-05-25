@@ -1,4 +1,5 @@
---Procedure that will replace the icd10 code with new code for a given ID
+--Procedure that will replace the ICD10 code with new code for a given ID
+--Процедура која ќе го промени ICD10 кодот со нов код, за дадено ID
 CREATE OR REPLACE PROCEDURE changeICD10(INT, INT)
 LANGUAGE plpgsql
 AS $$
@@ -12,10 +13,9 @@ END;
 $$;
 
 --call procedure
--- the first argument is the id
+--the first argument is the id
 --the second argument is the new code
 CALL changeICD10(1010107,0);
 
 --drop procedure
 DROP  PROCEDURE changeICD10(INT, INT);
-

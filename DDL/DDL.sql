@@ -74,10 +74,10 @@ create table check_up(
     description varchar(255),
     date date,
     patient_id int,
-    refferal_id int,
+    referral_id int,
     doctor_id int,
     constraint FK1 foreign key (patient_id) references patient(id),
-    constraint FK2 foreign key (refferal_id) references referral(id),
+    constraint FK2 foreign key (referral_id) references referral(id),
     constraint FK3 foreign key (doctor_id) references doctor(id)
 );
 
