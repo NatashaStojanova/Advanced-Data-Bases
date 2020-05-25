@@ -1,3 +1,5 @@
+--Create CheckUp ( The procedure is invoked by the doctor's ID, patient ID and description for the check up)
+--Изврши преглед (Процедурата се повикува со ID на лекарот, ID на пациентот и опис за самиот преглед)
 CREATE PROCEDURE createCheckUp(BIGINT,BIGINT,VARCHAR)
     LANGUAGE plpgsql
 AS
